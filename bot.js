@@ -1,8 +1,6 @@
 var Discord = require('discord.io');
 var logger = require('winston');
 var auth = require('./auth.json');
-var str = "https://tenor.com/view/grevious-general-kenobi-star-wars-gif-11406339";
-var result = str.link("https://www.w3schools.com");
 // Configure logger settings
 logger.remove(logger.transports.Console);
 logger.add(new logger.transports.Console, {
@@ -26,14 +24,21 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     if (message.substring(0, 1) == '.') {
         var args = message.substring(1).split(' ');
         var cmd = args[0];
-
+        var messages = ["Matts a baller",
+                        "Daniel is dumb",
+                        "Steves a bitch",
+                      ];
         args = args.splice(1);
+        function random_items(messages)
+        {
+          return messages[Math.floor(Math.random()*messages.length)];
+        }
         switch(cmd) {
             // !ping
-            case 'poo':
+            case 'PreachToMe':
                 bot.sendMessage({
                     to: channelID,
-                    message: str
+                    message: random_items(messages)
                 });
             break;
             // Just add any case commands if you want to..
