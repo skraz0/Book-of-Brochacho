@@ -59,7 +59,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                         "When you look up the word 'Good' in the dictionary, it says Kahlua. - Daniel",
                         "I would voluntarily suffocate to death in those thighs. - Daniel",
                         "A Steve in the hand is worth two in the bush. - Steve",
-                        "I like having a cheerleader for my cock. - Matt",
+                        "I like having a cheerleader for my cock. - Matt"
         ];
         var images = [ "https://imgur.com/a/NpPm934",
                        "https://imgur.com/a/wVIM2FB",
