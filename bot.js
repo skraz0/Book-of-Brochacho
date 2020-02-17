@@ -24,6 +24,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     if (message.substring(0, 1) == '.') {
         var args = message.substring(1).split(' ');
         var cmd = args[0];
+        args = args.splice(1);
         var messages = ["Everything that goes down your throat is my business. – Matt ",
                         "Yo. THAT’S MASSIVE! – Steve",
                         "I’ve always wanted Steven’s human touch. – Matt",
@@ -59,21 +60,48 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                         "I would voluntarily suffocate to death in those thighs. - Daniel",
                         "A Steve in the hand is worth two in the bush. - Steve",
                         "I like having a cheerleader for my cock. - Matt",
-                      ];
-        args = args.splice(1);
-        function random_items(messages)
-        {
+        ];
+        var images = [ "https://imgur.com/a/NpPm934",
+                       "https://imgur.com/a/wVIM2FB",
+                       "https://imgur.com/a/S597oTX",
+                       "https://imgur.com/a/mkfFEaG",
+                       "https://imgur.com/a/9DIA013",
+                       "https://imgur.com/a/3MxjioD",
+                       "https://imgur.com/a/kKSW9vR",
+                       "https://imgur.com/a/CV5yx1Q",
+                       "https://imgur.com/a/evLi9dq",
+                       "https://imgur.com/a/LPFTqBL",
+                       "https://imgur.com/a/twAS1eA"
+        ];
+
+        function randomMessages(messages){
           return messages[Math.floor(Math.random()*messages.length)];
-        }
+        };
+
+        function randomImages(images){
+          return images[Math.floor(Math.random()*images.length)];
+        };
+
         switch(cmd) {
-            // !ping
             case 'preachtome':
                 bot.sendMessage({
                     to: channelID,
-                    message: random_items(messages)
+                    message: randomMessages(messages)
                 });
             break;
-            // Just add any case commands if you want to..
+            case 'showme':
+                bot.sendMessage({
+                    to: channelID,
+                    message: randomImages(images)
+                });
+            break;
+            case 'lore':
+                bot.sendMessage({
+                    to: channelID,
+                    message: 'This is how the Book of Brochacho came about. Watch and learn muthafucka. \n https://www.youtube.com/watch?v=5rm-7TZINqw'
+                });
+            break;
+            // add more cases here
          }
      }
 });
