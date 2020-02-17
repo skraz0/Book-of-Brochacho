@@ -83,6 +83,12 @@ bot.on('message', function (user, userID, channelID, message, evt) {
         };
 
         switch(cmd) {
+            case 'help':
+                bot.sendMessage({
+                    to: channelID,
+                    message: '```.preachtome \n If you dare summon this command, bestoweth upon you thy word of the sacred Book of Brochacho.``` \n\n ```.showme \n Gaze thy eyes upon great depictions of the members of TBTT.``` \n\n ```.lore \n If you dont know then your probably not welcome here anyway, but go ahead and learn fucker.```'
+                });
+            break;
             case 'preachtome':
                 bot.sendMessage({
                     to: channelID,
